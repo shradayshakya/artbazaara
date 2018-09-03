@@ -3,11 +3,8 @@
   <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }} ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="js/bootstrap.min.js"></script>
 <style type="text/css">
   /* Make the image fully responsive */
   .carousel-inner img{
@@ -25,8 +22,8 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<a class ="navbar-brand" href="#" href="#">
-			<img src="img/logo.png" alt = "artBazaara" width ="100" height="70" class="d-inline-block align-top" >
+		<a class ="navbar-brand" href="{{asset('/')}}" >
+			<img src="{{asset('img/logo.png')}}" alt = "artBazaara" width ="100" height="70" class="d-inline-block align-top" >
 		</a>
 
 
@@ -59,8 +56,8 @@
      				 </div>
     			</div>
 
-				<a class="flex-full text-dark nav-link" href ="">About us</a>
-				<a class="flex-full text-dark nav-link" href ="">Log in</a>
+				<a class="flex-full text-dark nav-link" href ="{{asset('/aboutus')}}">About us</a>
+				<a class="flex-full text-dark nav-link" href ="{{asset('/login')}}">Log in</a>
 			</nav>
 		</div>
 	</nav>
@@ -80,13 +77,13 @@
 	
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	      <img src="img/banner-nepal-3.jpg" alt="nepal art" width="1350" height="450">
+	      <img src="{{asset('img/banner-nepal-3.jpg')}}" alt="nepal art" width="1350" height="450">
 	    </div>	
 	    <div class="carousel-item">
-	      <img src="img/nepal-Banner.jpg" alt="traditional" width="1350" height="450">
+	      <img src="{{asset('img/nepal-Banner.jpg')}}" alt="traditional" width="1350" height="450">
 	    </div>
 	    <div class="carousel-item">
-	      <img src="img/arts-banner.jpg" alt="nepal" width="1350" height="450">
+	      <img src="{{asset('img/arts-banner.jpg')}}" alt="nepal" width="1350" height="450">
 	    </div>
 	  </div>
 
@@ -110,7 +107,7 @@
 		
 			<div class="d-flex flex-wrap">
 				<div class="card p-3 mt-2 mx-auto top shadow-lg" style="width:250px">
-			    <img class="card-img-top shadow-lg" src="img/amogh-siddhi.png" alt="Card image">
+			    <img class="card-img-top shadow-lg" src="{{asset('img/amogh-siddhi.png')}}" alt="Card image">
 			    <div class="card-body">
 			      <h5 class="card-title"><strong>Amogh Siddhi</strong></h5>
 			      <p class="card-text">Samundra Maan Shrestha</p>
@@ -120,7 +117,7 @@
 		  		</div>
 
 		  		<div class="card p-3 mt-2 mx-auto top shadow-lg" style="width:250px">
-			    <img class="card-img-top shadow-lg" src="img/manjushri.jpg" alt="Card image">
+			    <img class="card-img-top shadow-lg" src="{{asset('img/manjushri.jpg')}}" alt="Card image">
 			    <div class="card-body">
 			      <h5 class="card-title"><strong>Manjushri</strong></h5>
 			      <p class="card-text">Unknown</p>
@@ -130,7 +127,7 @@
 		  		</div>
 
 		  		<div class="card p-3 mt-2 mx-auto top shadow-lg" style="width:250px">
-			    <img class="card-img-top shadow-lg" src="img/maha-kala.jpg" alt="Card image">
+			    <img class="card-img-top shadow-lg" src="{{asset('img/maha-kala.jpg')}}" alt="Card image">
 			    <div class="card-body">
 			      <h5 class="card-title"><strong>Maha Kala</strong></h5>
 			      <p class="card-text">Samundra Maan Shrestha</p>
@@ -140,7 +137,7 @@
 		  		</div>
 
 		  		<div class="card p-3 mt-2 mx-auto top shadow-lg" style="width:250px">
-			    <img class="card-img-top shadow-lg" src="img/vishnu.jpg" alt="Card image">
+			    <img class="card-img-top shadow-lg" src="{{asset('img/vishnu.jpg')}}" alt="Card image">
 			    <div class="card-body">
 			      <h5 class="card-title"><strong>Vishnu</strong></h5>
 			      <p class="card-text">Unknown</p>
@@ -165,5 +162,8 @@
 		</footer>
 		<!-- Footer -->
 
+	<script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="{{asset('js/bootstrap.min.js')}}"></script>
 </body>
 </html>

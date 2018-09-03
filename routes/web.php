@@ -11,10 +11,26 @@
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
 Route::get('/',function(){
     return view('index');
+});
+
+Route::get('/aboutus',function(){
+    return view('aboutus');
+});
+
+Route::get('/login',function(){
+    return view('login');
+});
+
+Route::get('/product',function(){
+    return view('product');
+});
+
+Route::get('/result',function(){
+    return view('result');
+});
+
+Route::get('/signup',function(){
+    return view('signup');
 });
