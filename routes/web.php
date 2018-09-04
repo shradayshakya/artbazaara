@@ -23,9 +23,7 @@ Route::get('/login',function(){
     return view('login');
 });
 
-Route::get('/product',function(){
-    return view('product');
-});
+Route::get('/product/{product}', 'ProductController@display');
 
 Route::get('/result',function(){
     return view('result');
@@ -34,3 +32,4 @@ Route::get('/result',function(){
 Route::get('/signup',function(){
     return view('signup');
 });
+

@@ -61,22 +61,22 @@
 		<div class="container mt-4">
 			<div class="row">
 				<div class="col-md-6">
-					<img src="{{asset('img/maha-kala.jpg')}}" class="img-fluid img-thumbnail shadow-lg" style="width: 100%;height: 100%"">	
+					<img src="{{asset($product->image)}}" class="img-fluid img-thumbnail shadow-lg" style="width: 100%;height: 100%"">	
 				</div>
 
 				<div class="col-md-6">
 						</br>
 						</br>
-						<h2>Maha Kala</h2>
-						<h4>By: Samundra Maan Shrestha</h4>
+						<h2>{{$product->name}}</h2>
+						<h4>By: {{$product->artist}}</h4>
 					</br>
 						<p>
 							<strong>Category:</strong>
-							Pauwa
+							{{$product->category}}
 						</p>
 
 					</br>
-						<h4>Rs.1000000</h4>
+						<h4>Rs.{{$product->price}}</h4>
 
 					</br>	
 						<button type="submit" class="btn btn-primary">Order</button>	
