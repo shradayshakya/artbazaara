@@ -4,7 +4,8 @@
 		<!-- form -->
 		<div class="card mt-4 mx-auto w-75">
 			<h5 class="card-header bg-primary text-white text-center">SIGN UP</h2>
-			<form class="card-body" id = 'registrationForm' action ="" method="post"> 
+			<form class="card-body" id = 'registrationForm' action ="" method="POST"> 
+			{{csrf_field()}}
 				<div class="row">
 					<div class="col-md-6  mt-4">
 						<label for="fname">First name</label>

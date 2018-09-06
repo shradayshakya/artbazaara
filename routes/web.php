@@ -33,3 +33,10 @@ Route::get('/signup',function(){
     return view('signup');
 });
 
+Route::post('/addproduct', 'ProductController@register');
+
+Route::get('/addproduct', function(){
+    return view('adminpanel.addproduct');
+});
+
+Route::get('/showproduct', 'ProductController@show');
