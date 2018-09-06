@@ -35,8 +35,12 @@ Route::get('/signup',function(){
 
 Route::post('/addproduct', 'ProductController@register');
 
-Route::get('/addproduct', function(){
+Route::get('/adminpanel/addproduct', function(){
     return view('adminpanel.addproduct');
 });
 
-Route::get('/showproduct', 'ProductController@show');
+Route::get('/adminpanel/showproduct', 'ProductController@show');
+
+Route::get('/adminpanel', function(){
+    return view('adminpanel.adminmain');
+});

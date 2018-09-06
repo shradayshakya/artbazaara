@@ -2,8 +2,8 @@
 
 @section('content')
 <!-- form -->
-<div class="card mt-4 mx-auto w-75">
-			<h5 class="card-header bg-primary text-white text-center">Register product</h2>
+<div class="card mx-auto w-75">
+			<h5 class="card-header bg-dark text-white text-center">Register product</h2>
 			<form class="card-body" id = 'registrationForm' action ="/addproduct" method="POST"> 
 			{{csrf_field()}}
 
@@ -44,8 +44,15 @@
 				</div>
 
 				<div class="d-flex justify-content-center mt-4">
-						<button type="submit" class="btn btn-primary mt-2">Register</button>
+						<button type="submit" class="btn btn-dark mt-2">Register</button>
 				</div>
 			</form>
 		</div>
+@endsection
+
+
+@section('scripts')
+<script type = 'text/javascript'>
+$('#addproduct').addClass('active');
+</script>
 @endsection

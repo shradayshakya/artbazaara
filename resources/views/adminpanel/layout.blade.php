@@ -1,17 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    @yield('content')    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <title>Artbazaara</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">
+  </head>
+
+  <body>
+    @include('adminpanel.navbar')
+    <div class="container-fluid">
+      <div class="row">
+
+      @include('adminpanel.sidebar')
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            @yield('content')
+        </main>
+      </div>
+    </div>
+
+    @include('adminpanel.footer')
     @yield('scripts')
-</body>
+  </body>
 </html>

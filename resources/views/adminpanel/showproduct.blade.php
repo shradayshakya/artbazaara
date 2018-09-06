@@ -2,7 +2,7 @@
 
 
 @section('content')
-<table class="table mt-4">
+<table class="table">
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
@@ -29,4 +29,10 @@
   </tbody>
 </table>
 
+@endsection
+
+@section('scripts')
+<script type = 'text/javascript'>
+$('#showproduct').addClass('active');
+</script>
 @endsection
