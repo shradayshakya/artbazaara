@@ -28,11 +28,6 @@ class ProductController extends Controller
         $product->save();
         return redirect('/addproduct');
     }
-
-    public function show(){
-        $products = Product::get();
-        return view('adminpanel.showproduct',compact('products'));
-    }
 }
 
 

@@ -15,11 +15,6 @@ class CategoryController extends Controller
         $category->save();
         return redirect('/adminpanel');
     }  
-
-    public function show(){
-        $categories = \App\Category::get(); 
-        return view('adminpanel.showcategory',compact('categories'));
-    }
 }
 
 

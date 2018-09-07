@@ -2,9 +2,9 @@
 
 @section('content')
 <!-- form -->
-<div class="card mx-auto w-75">
+<div class="card mx-auto w-75 mt-2">
 			<h5 class="card-header bg-dark text-white text-center">Add Category</h2>
-			<form class="card-body" id = 'registrationForm' action ="/addcategory" method="POST"> 
+			<form class="card-body" id = 'registrationForm' action ="/adminpanel/addcategory" method="POST"> 
 			{{csrf_field()}}
 
 				<div class="row">

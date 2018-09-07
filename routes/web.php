@@ -11,50 +11,28 @@
 |
 */
 
-Route::get('/',function(){
-    return view('index');
-});
+Route::get('/','IndexController@view');
 
-Route::get('/aboutus',function(){
-    return view('aboutus');
-});
+Route::get('/aboutus','AboutusController@view');
+
+Route::get('/product/{product}', 'ProductController@display');
+
+Route::get('/result','ResultController@view');
+
+Route::get('/signup', 'SignupController@view');
 
 Route::get('/login',function(){
     return view('login');
 });
 
-Route::get('/product/{product}', 'ProductController@display');
-
-Route::get('/result',function(){
-    return view('result');
-});
-
-Route::get('/signup',function(){
-    return view('signup');
-});
-
-
-
 //admin panel routes
 
-Route::get('/adminpanel', function(){
-    return view('adminpanel.adminmain');
-});
+Route::get('/adminpanel', 'AdminpanelController@view');
 
+Route::get('/adminpanel/addproduct','AdminpanelController@viewAddProduct');
+Route::get('/adminpanel/showproduct', 'AdminpanelController@viewShowProduct');
+Route::post('/adminpanel/addproduct', 'ProductController@register');
 
-Route::post('/addproduct', 'Product@add');
-
-Route::get('/adminpanel/addproduct', function(){
-    return view('adminpanel.addproduct');
-});
-
-Route::get('/adminpanel/showproduct', 'ProductController@show');
-
-
-Route::get('/adminpanel/addcategory', function(){
-    return view('adminpanel.addcategory');
-});
-
-Route::post('/addcategory','CategoryController@register');
-
-Route::get('/adminpanel/showcategory','CategoryController@show');
+Route::get('/adminpanel/addcategory', 'AdminpanelController@viewAddCategory');
+Route::get('/adminpanel/showcategory','AdminpanelController@viewShowCategory');
+Route::post('/adminpanel/addcategory','CategoryController@register');
