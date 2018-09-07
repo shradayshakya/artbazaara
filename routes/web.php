@@ -15,9 +15,10 @@ Route::get('/','IndexController@view');
 Route::get('/aboutus','AboutusController@view');
 Route::get('/result','ResultController@view');
 Route::get('/signup', 'SignupController@view');
-Route::get('/product/{product}', 'ProductController@display');
+Route::get('/product/{product}', 'ProductController@view');
 Route::get('/login',function(){
-    return view('login');
+    $categories =\App\Category::get();
+    return view('login',compact('categories'));
 });
 
 //admin panel routes

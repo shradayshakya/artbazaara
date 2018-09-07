@@ -4,6 +4,8 @@
 @section('content')
 		<!--PRODUCT DESCRIPTION START-->
 
+			@php ($product = $products[0])
+		
 		<div class="container mt-4">
 			<div class="row">
 				<div class="col-md-6">
