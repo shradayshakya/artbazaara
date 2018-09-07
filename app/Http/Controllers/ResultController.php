@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class ResultController extends Controller
 {
     public function view(){
-        return view('result');
+        $categories = Category::get();
+        return view('result',compact('categories'));
     }
 }

@@ -1,5 +1,5 @@
-<nav class="col-md-2 d-none d-md-block bg-light sidebar">
-    <div class="sidebar-sticky">
+    <nav class="col-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
             <a class="nav-link" id='showcategory' href="/adminpanel/showcategory">
@@ -22,6 +22,13 @@
                 Show Product
             </a>
             </li>
+
+            <li class="nav-item">
+            <a class="nav-link" id='showpurchase' href="/adminpanel/showpurchase">
+                <span data-feather="list"></span>
+                Show Purchase
+            </a>
+            </li>
             
             <li class="nav-item">
             <a class="nav-link" id='addproduct' href="/adminpanel/addproduct">
@@ -31,5 +38,5 @@
             </li>
             
         </ul>
-    </div>
-</nav>
+      </div>
+    </nav>

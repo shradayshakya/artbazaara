@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class SignupController extends Controller
 {
     public function view(){
-        return view('signup');
+        $categories = Category::get();
+        return view('signup',compact('categories'));
     }
 }

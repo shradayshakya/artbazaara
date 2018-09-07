@@ -5,7 +5,7 @@
 		</button>
 
 		<a class ="navbar-brand" href="{{asset('/')}}">
-			<img src="{{asset('img/logo.png')}}" alt = "artBazaara" width ="100" height="70" class="d-inline-block align-top" >
+			<img src="{{asset('img/logo.png')}}" alt = "artBazaara" width ="98" height="62" class="d-inline-block align-top" >
 		</a>
 
 		<div class="collapse navbar-collapse" id="navbarToggler01">
@@ -29,9 +29,10 @@
      				   Categories
      				 </a>
      				 <div class="dropdown-menu">
-     				   <a class="dropdown-item" href="#">Thanka</a>
-     				   <a class="dropdown-item" href="#">Pauwa</a>
-     				   <a class="dropdown-item" href="#">Metal Statue</a>
+					  @foreach($categories as $category)
+					  @php ($name = $category->name)
+     				   <a class="dropdown-item" href={{asset("/result/$name")}}>{{$name}}</a>
+					  @endforeach
      				 </div>
     			</div>
 

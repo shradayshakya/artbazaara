@@ -26,16 +26,17 @@
                     <div class = "col mt-4">
                     <label for="category">Category</label>
                     <select class = "form-control" name="category">
-                        <option value = "Pauwa">Pauwa</option>
-                        <option value = "Metal Statue">Metal Statue</option>
+					@foreach($categories as $category)
+                        <option value = "{{$category->id}}">{{$category->name}}</option>
+					@endforeach
                     </select>
                     </div>
                 </div>
 
 				<div class="row">
 					<div class="col-md-6 mt-4">
-						<label for="sname">Supplier</label>
-						<input type="text" class="form-control" name ='cost' placeholder="Supplier" required>
+						<label for="supplier">Supplier</label>
+						<input type="text" class="form-control" name ='supplier' placeholder="Supplier" required>
 					</div>
 					<div class="col-md-6 mt-4">
 						<label for="phone">Contact number</label>

@@ -19,7 +19,6 @@ class CreateProductsTable extends Migration
             $table->text("artist");
             $table->text("image");
             $table->integer("category_id");
-            $table->text("purchase_id");
             $table->timestamps();
         });
   }

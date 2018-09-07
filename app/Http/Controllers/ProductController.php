@@ -12,21 +12,16 @@ class ProductController extends Controller
     }
 
     public function register(Request $request){
-       $request->validate([
-            'name' => 'required',
-            'artist' => 'required',
-            'cost' => 'required',
-            'price' => 'required'
-        ]);
         $product = new Product;
         $product->name = $request->input('name');
         $product->artist = $request->input('artist');
-        $product->category = $request->input('category');
-        $product->cost = $request->input('cost');
-        $product->price = $request->input('price');
+        $product->category_id = $request->input('category');
         $product->image = "/img/default.jpg";
         $product->save();
-        return redirect('/addproduct');
+        $purchase = new PurchaseController; 
+        $purchase->register($request, $product->id);
+    
+        return redirect('/adminpanel');
     }
 }
 

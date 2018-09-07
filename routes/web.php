@@ -12,15 +12,10 @@
 */
 
 Route::get('/','IndexController@view');
-
 Route::get('/aboutus','AboutusController@view');
-
-Route::get('/product/{product}', 'ProductController@display');
-
 Route::get('/result','ResultController@view');
-
 Route::get('/signup', 'SignupController@view');
-
+Route::get('/product/{product}', 'ProductController@display');
 Route::get('/login',function(){
     return view('login');
 });
@@ -31,6 +26,7 @@ Route::get('/adminpanel', 'AdminpanelController@view');
 
 Route::get('/adminpanel/addproduct','AdminpanelController@viewAddProduct');
 Route::get('/adminpanel/showproduct', 'AdminpanelController@viewShowProduct');
+Route::get('/adminpanel/showpurchase', 'AdminpanelController@viewShowPurchase');
 Route::post('/adminpanel/addproduct', 'ProductController@register');
 
 Route::get('/adminpanel/addcategory', 'AdminpanelController@viewAddCategory');
