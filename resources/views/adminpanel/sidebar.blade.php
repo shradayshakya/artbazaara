@@ -9,6 +9,21 @@
             </li>
 
             <li class="nav-item">
+            <a class="nav-link" id='addcategory' href="/adminpanel/addcategory">
+                <span data-feather="grid"></span>
+                Add Category
+            </a>
+            </li>
+
+
+            <li class="nav-item">
+            <a class="nav-link" id='showcategory' href="/adminpanel/showcategory">
+                <span data-feather="list"></span>
+                Show Category
+            </a>
+            </li>
+
+            <li class="nav-item">
             <a class="nav-link" id='showproduct' href="/adminpanel/showproduct">
                 <span data-feather="list"></span>
                 Show Product

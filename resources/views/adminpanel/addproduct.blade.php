@@ -10,14 +10,14 @@
 				<div class="row">
 					<div class="col mt-4">
 						<label for="name">Product Name</label>
-						<input type="text" class="form-control" name='name' placeholder="Product name">
+						<input type="text" class="form-control" name='name' placeholder="Product name" required>
 					</div>
 				</div>
 
                 <div class="row">
 					<div class="col mt-4">
 						<label for="artist">Artist</label>
-						<input type="text" class="form-control" name='artist' placeholder="Artist">
+						<input type="text" class="form-control" name='artist' placeholder="Artist" required>
 					</div>
 				</div>
 					
@@ -34,12 +34,23 @@
 
 				<div class="row">
 					<div class="col-md-6 mt-4">
+						<label for="sname">Supplier</label>
+						<input type="text" class="form-control" name ='cost' placeholder="Supplier" required>
+					</div>
+					<div class="col-md-6 mt-4">
+						<label for="phone">Contact number</label>
+						<input type="text" class="form-control" name = 'phone' placeholder="Price" required>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6 mt-4">
 						<label for="cost">Cost</label>
-						<input type="number" class="form-control" name ='cost' placeholder="Cost">
+						<input type="number" class="form-control" name ='cost' placeholder="Cost" required>
 					</div>
 					<div class="col-md-6 mt-4">
 						<label for="price">Price</label>
-						<input type="number" class="form-control" name = 'price' placeholder="Price">
+						<input type="number" class="form-control" name = 'price' placeholder="Price" required>
 					</div>
 				</div>
 

@@ -12,6 +12,12 @@ class ProductController extends Controller
     }
 
     public function register(Request $request){
+       $request->validate([
+            'name' => 'required',
+            'artist' => 'required',
+            'cost' => 'required',
+            'price' => 'required'
+        ]);
         $product = new Product;
         $product->name = $request->input('name');
         $product->artist = $request->input('artist');

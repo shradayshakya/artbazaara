@@ -33,7 +33,16 @@ Route::get('/signup',function(){
     return view('signup');
 });
 
-Route::post('/addproduct', 'ProductController@register');
+
+
+//admin panel routes
+
+Route::get('/adminpanel', function(){
+    return view('adminpanel.adminmain');
+});
+
+
+Route::post('/addproduct', 'Product@add');
 
 Route::get('/adminpanel/addproduct', function(){
     return view('adminpanel.addproduct');
@@ -41,6 +50,11 @@ Route::get('/adminpanel/addproduct', function(){
 
 Route::get('/adminpanel/showproduct', 'ProductController@show');
 
-Route::get('/adminpanel', function(){
-    return view('adminpanel.adminmain');
+
+Route::get('/adminpanel/addcategory', function(){
+    return view('adminpanel.addcategory');
 });
+
+Route::post('/addcategory','CategoryController@register');
+
+Route::get('/adminpanel/showcategory','CategoryController@show');
