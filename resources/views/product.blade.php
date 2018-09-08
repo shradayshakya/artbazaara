@@ -27,7 +27,8 @@
 						<h4>Rs.{{$product->price}}</h4>
 
 					</br>	
-						<button type="submit" class="btn btn-primary">Order</button>	
+						@php($id = $product->id)
+						<a href={{asset("/order/$id")}} class="text-white btn btn-primary">Order</a>	
 				</div>
 			</div>
 		</div>

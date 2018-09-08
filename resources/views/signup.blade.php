@@ -4,21 +4,14 @@
 		<!-- form -->
 		<div class="card mt-4 mx-auto w-75">
 			<h5 class="card-header bg-primary text-white text-center">SIGN UP</h2>
-			<form class="card-body" id = 'registrationForm' action ="" method="POST"> 
+			<form class="card-body" id = 'registrationForm' action ="/signup" method="POST"> 
 			{{csrf_field()}}
 				<div class="row">
-					<div class="col-md-6  mt-4">
-						<label for="fname">First name</label>
-						<input type="text" class="form-control" name = 'fname' placeholder="First name">
+					<div class="col mt-4">
+						<label for="name">Name</label>
+						<input type="text" class="form-control" name = 'name' placeholder="Enter name">
 						<span class='formMessage text-danger m-2' id='firstNameMessage'>
-							Enter first name
-						</span>
-					</div>
-					<div class="col-md-6 mt-4">
-						<label for="fname">Last name</label>
-						<input type="text" class="form-control" name = 'lname' placeholder="Last name">
-						<span class='formMessage text-danger m-2' id='lastNameMessage'>
-								Enter last name
+							Enter name
 						</span>
 					</div>
 				</div>
@@ -36,14 +29,14 @@
 				<div class="row">
 					<div class="col-md-6 mt-4">
 						<label for="pword">Password</label>
-						<input type="password" class="form-control" name ='pword' placeholder="Password">
+						<input type="password" class="form-control" id = 'password'name ='password' placeholder="Password">
 						<span class='formMessage text-danger m-2' id='passwordMessage'>
 								Password should be atleat 8 characters
 						</span>
 					</div>
 					<div class="col-md-6 mt-4">
 						<label for="cpword">Confirm password</label>
-						<input type="password" class="form-control" name = 'cpword' placeholder="Confirm password">
+						<input type="password" class="form-control" id = 'password_confirmation' name ='password_confirmation' placeholder="Confirm password">
 						<span class='formMessage text-danger m-2' id='confirmPasswordMessage'>
 								Those passwords didn't match 
 						</span>

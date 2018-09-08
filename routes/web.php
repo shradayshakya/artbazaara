@@ -11,15 +11,23 @@
 |
 */
 
+Route::get('/home','IndexController@view');
 Route::get('/','IndexController@view');
+
 Route::get('/aboutus','AboutusController@view');
 Route::get('/result','ResultController@view');
-Route::get('/signup', 'SignupController@view');
 Route::get('/product/{product}', 'ProductController@view');
-Route::get('/login',function(){
-    $categories =\App\Category::get();
-    return view('login',compact('categories'));
-});
+
+Route::get('/login', 'SessionsController@view');
+Route::post('/login','SessionsController@store');
+
+Route::get('/logout', 'SessionsController@destroy');
+
+Route::get('/signup', 'RegistrationController@view');
+Route::post('/signup', 'RegistrationController@store');
+
+Route::get('/order/{id}', 'OrderController@placeorder');
+
 
 //admin panel routes
 

@@ -37,7 +37,16 @@
     			</div>
 
 				<a class="flex-full text-dark nav-link" href ="{{asset('/aboutus')}}">About us</a>
+				<!---->
+
+				@if(Auth::check())
+				<span class ="flex-full text-dark nav-link">{{ Auth::user()->name}} 
+				</span>
+				<a class="flex-full text-dark nav-link" href ="{{asset('/logout')}}">Log out</a>
+				@else
 				<a class="flex-full text-dark nav-link" href ="{{asset('/login')}}">Log in</a>
+				@endif
+
 			</nav>
 		</div>
 	</nav>
