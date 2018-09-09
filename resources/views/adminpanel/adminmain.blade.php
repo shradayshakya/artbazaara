@@ -1,4 +1,4 @@
-@extends('adminpanel.layout')
+@extends('adminpanel.layouts.adminmaster')
 
 @section('content')
 <div class="text-center mt-5">

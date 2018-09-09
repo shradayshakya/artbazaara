@@ -1,4 +1,4 @@
-@extends('adminpanel.layout')
+@extends('adminpanel.layouts.adminmaster')
 
 @section('content')
 <!-- form -->

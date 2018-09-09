@@ -14,6 +14,7 @@
                     @endif
                 @endforeach
 			</div>
+			@php($count=0)
 			<div class="d-flex flex-wrap">
 			@foreach($products as $product)
 				<div class="card p-3 mt-2 mx-auto top shadow-lg" style="width:250px">
@@ -24,7 +25,19 @@
 					<a href= '{{asset("/product/$product->id")}}' class="btn btn-primary">Details</a>
 				</div>
 				</div>
+				@php($count++)
 			@endforeach
+			@if($count==0)
+			<h5 class='text-danger'>No results to show</h5>
+			@endif
 		</div>
 	</div>
+@endsection
+
+@section('scripts')
+	@if($count == 0)
+	<script type = "text/javascript">
+	$('footer').addClass('fixed-bottom');
+	</script>
+	@endif
 @endsection

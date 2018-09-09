@@ -16,11 +16,11 @@
   </head>
 
   <body>
-    @include('adminpanel.navbar')
+    @include('adminpanel.layouts.nav')
     <div class="container-fluid">
       <div class="row">
 
-      @include('adminpanel.sidebar')
+      @include('adminpanel.layouts.sidebar')
 
         <main role="main" class="col-10 ml-sm-auto px-4">
             @yield('content')
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    @include('adminpanel.footer')
+    @include('adminpanel.layouts.footer')
     @yield('scripts')
   </body>
 </html>
