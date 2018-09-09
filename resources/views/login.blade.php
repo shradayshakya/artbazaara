@@ -6,6 +6,11 @@
 		<div class="card mt-2 mt-md-5 mx-auto" style="width: 300px">
 			<form class="card-body" action = '{{asset("/login")}}' method = 'POST' id = 'loginForm'>
 				{{csrf_field()}}
+
+				@if(!Auth::check())
+				<input type = "hidden" name = 'productId' value = "{{$productId[0]}}">
+				@endif
+
 				<div class="form-group">
 					<label for="email">Email:</label>
 					<input type="email" class="form-control" name = 'email' placeholder="Enter email address" required>

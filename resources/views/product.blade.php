@@ -28,7 +28,12 @@
 
 					</br>	
 						@php($id = $product->id)
-						<a href={{asset("/order/$id")}} class="text-white btn btn-primary">Order</a>	
+
+						@if(Auth::check())
+						<a href='{{asset("/order/$id")}}' class="text-white btn btn-primary">Order</a>	
+						@else
+						<a href='{{asset("/login/$id")}}' class="text-white btn btn-primary">Login</a>	
+						@endif
 				</div>
 			</div>
 		</div>

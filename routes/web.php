@@ -21,6 +21,8 @@ Route::get('/category/{id}','CategoryController@view');
 Route::get('/product/{product}', 'ProductController@view');
 
 Route::get('/login', 'SessionsController@view');
+Route::get('/login/{id}', 'SessionsController@viewWithProductId');
+
 Route::post('/login','SessionsController@store');
 
 Route::get('/logout', 'SessionsController@destroy');
