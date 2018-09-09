@@ -25,6 +25,15 @@
 						<button type="submit" class="btn btn-dark mt-2">Add</button>
 				</div>
 			</form>
+			@if($errors->all())
+				<div class="alert alert-danger">
+					<ul>
+						@foreach ($errors->all() as $error)
+							<li>{{ $error }}</li>
+						@endforeach
+					</ul>
+				</div>
+			 @endif
 		</div>
 @endsection
 

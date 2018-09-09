@@ -10,6 +10,10 @@ class CategoryController extends Controller
 {
     
     public function register(Request $request){
+        $this->validate(request(),[
+            'name'=>'required',
+            'desc'=>'required',
+        ]);
         $category = new Category;
         $category->name = $request->name;
         $category->desc = $request->desc;
