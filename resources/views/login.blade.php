@@ -7,7 +7,7 @@
 			<form class="card-body" action = '{{asset("/login")}}' method = 'POST' id = 'loginForm'>
 				{{csrf_field()}}
 
-				@if(!Auth::check())
+				@if(isset($productId))
 				<input type = "hidden" name = 'productId' value = "{{$productId[0]}}">
 				@endif
 

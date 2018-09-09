@@ -39,9 +39,19 @@ Route::get('/adminpanel', 'AdminpanelController@view');
 
 Route::get('/adminpanel/addproduct','AdminpanelController@viewAddProduct');
 Route::get('/adminpanel/showproduct', 'AdminpanelController@viewShowProduct');
-Route::get('/adminpanel/showpurchase', 'AdminpanelController@viewShowPurchase');
 Route::post('/adminpanel/addproduct', 'ProductController@register');
 
 Route::get('/adminpanel/addcategory', 'AdminpanelController@viewAddCategory');
 Route::get('/adminpanel/showcategory','AdminpanelController@viewShowCategory');
 Route::post('/adminpanel/addcategory','CategoryController@register');
+
+Route::get('/adminpanel/showorder','AdminpanelController@viewShowOrder');
+Route::get('/adminpanel/showorder/confirm/{id}','OrderController@confirm');
+Route::get('/adminpanel/showorder/decline/{id}','OrderController@decline');
+
+Route::get('/adminpanel/showdeliver','AdminpanelController@viewShowDeliver');
+Route::get('/adminpanel/showdeliver/confirm/{id}','DeliveryController@confirm');
+Route::get('/adminpanel/showdeliver/decline/{id}','DeliveryController@decline');
+
+Route::get('/adminpanel/showsales','AdminpanelController@viewShowSales');
+Route::get('/adminpanel/showpurchase', 'AdminpanelController@viewShowPurchase');
