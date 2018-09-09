@@ -33,11 +33,30 @@ class ProductController extends Controller
     }
 
     public function register(Request $request){
+        $this->validate(request(),[
+            'name'=>'required',
+            'artist'=>'required',
+            'category' => 'required',
+            'supplier' => 'required',
+            'phone' => 'required',
+            'cost' => 'required',
+            'price' => 'required',
+            'input_img' => 'required|image|mimes:jpg,jpeg,png,gif'
+        ]);
+
         $product = new Product;
         $product->name = $request->input('name');
         $product->artist = $request->input('artist');
         $product->category_id = $request->input('category');
-        $product->image = "/img/maha-kala.jpg";
+
+        if ($request->hasFile('input_img')) {
+            $image = $request->file('input_img');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/img/');
+            $image->move($destinationPath, $name);
+        }
+        $product->image = '/img/'.$name;
+
         $product->save();
         $purchase = new PurchaseController; 
         $purchase->register($request, $product->id);

@@ -4,7 +4,7 @@
 <!-- form -->
 <div class="card mx-auto w-75 mt-2">
 			<h5 class="card-header bg-dark text-white text-center">Register product</h2>
-			<form class="card-body" id = 'registrationForm' action ="/adminpanel/addproduct" method="POST"> 
+			<form class="card-body" id = 'registrationForm' action ="/adminpanel/addproduct" method="POST" enctype="multipart/form-data"> 
 			{{csrf_field()}}
 
 				<div class="row">
@@ -55,10 +55,26 @@
 					</div>
 				</div>
 
+				<div class="row">
+					<div class="col mt-4">
+						<label for="artist">Image</label>
+						<input type="file" class="form-control" name='input_img' required>
+					</div>
+				</div>
+
 				<div class="d-flex justify-content-center mt-4">
 						<button type="submit" class="btn btn-dark mt-2">Register</button>
 				</div>
 			</form>
+			@if($errors->all())
+				<div class="alert alert-danger">
+					<ul>
+						@foreach ($errors->all() as $error)
+							<li>{{ $error }}</li>
+						@endforeach
+					</ul>
+				</div>
+			 @endif
 		</div>
 @endsection
 
