@@ -10,14 +10,12 @@
 
 		<div class="collapse navbar-collapse" id="navbarToggler01">
 			 <nav class="nav d-flex flex-column flex-md-row w-100 justify-content-end">
-
-				
-				<form action="" class="form-inline form-md justify-content-center pl-5">
+				<form action='{{asset("/result")}}' method = 'post' class="form-inline form-md justify-content-center pl-5">
+				{{csrf_field()}}
 					<div class="input-group">
-					<input type="text" class="form-control">
-			
+					<input type="text" name = 'data' placeholder = 'Enter keywords here' class="form-control">
 						<div class="input-group-append">
-							<button type="button" class="btn btn-link">
+							<button type="submit" class="btn btn-link">
 							<span class="fa fa-search"></span>
 							</button>
 						</div>
@@ -30,19 +28,16 @@
      				 </a>
      				 <div class="dropdown-menu">
 					  @foreach($categories as $category)
-					  @php ($name = $category->name)
-     				   <a class="dropdown-item" href={{asset("/result/$name")}}>{{$name}}</a>
+					  @php ($id = $category->id)
+     				   <a class="dropdown-item" href='{{asset("/category/$id")}}'>{{$category->name}}</a>
 					  @endforeach
      				 </div>
     			</div>
 
-				<a class="flex-full text-dark nav-link" href ="{{asset('/aboutus')}}">About us</a>
-				<!---->
-
-				@if(Auth::check())
-				<span class ="flex-full text-dark nav-link">{{ Auth::user()->name}} 
-				</span>
+				@if(Auth::check())	
 				<a class="flex-full text-dark nav-link" href ="{{asset('/logout')}}">Log out</a>
+				<span class ="flex-full text-dark nav-link small text-muted" disabled>{{ Auth::user()->name}} 
+				</span>
 				@else
 				<a class="flex-full text-dark nav-link" href ="{{asset('/login')}}">Log in</a>
 				@endif

@@ -8,18 +8,12 @@
 				{{csrf_field()}}
 				<div class="form-group">
 					<label for="email">Email:</label>
-					<input type="email" class="form-control" name = 'email' placeholder="Enter email address">
-					<span class="text-danger m-2 loginMessage" id="emailMessage">
-						Enter email
-					</span>
+					<input type="email" class="form-control" name = 'email' placeholder="Enter email address" required>
 				</div>
 
 				<div class="form-group">
 					<label for="password">Password</label>
-					<input type="password" class="form-control" name = 'password' placeholder="Enter password">
-					<span class = "text-danger m-2 loginMessage" id="pwordMessage">
-						Enter password
-					</span>
+					<input type="password" class="form-control" name = 'password' placeholder="Enter password" required>
 				</div>
 
 				<div class="form-group form-check">
@@ -45,7 +39,6 @@
 
 		
 @section('scripts')
-<script src="{{asset('js/logVal.js')}}"></script>
 <script type = "text/javascript">
 	$('footer').addClass('fixed-bottom');
 </script>

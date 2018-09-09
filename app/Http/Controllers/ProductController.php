@@ -37,7 +37,7 @@ class ProductController extends Controller
         $product->name = $request->input('name');
         $product->artist = $request->input('artist');
         $product->category_id = $request->input('category');
-        $product->image = "/img/default.jpg";
+        $product->image = "/img/maha-kala.jpg";
         $product->save();
         $purchase = new PurchaseController; 
         $purchase->register($request, $product->id);

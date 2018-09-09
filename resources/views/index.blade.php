@@ -39,55 +39,55 @@
 
 <!--NEW ARRIVALS-->
 <div class="container mt-5">
-<div class="row">
-<h4 class="text-info mx-auto">New Arrival</h4>
-</div>
-
-	<div class="d-flex flex-wrap">
-		<div class="card p-3 mt-2 mx-auto top shadow-lg" style="width:250px">
-			<img class="card-img-top shadow-lg" src="{{asset('img/amogh-siddhi.png')}}" alt="Card image">
-			<div class="card-body">
-				<h5 class="card-title"><strong>Amogh Siddhi</strong></h5>
-				<p class="card-text">Samundra Maan Shrestha</p>
-				<p class="card-text">Rs.1000000</p>
-				<a href="#" class="btn btn-primary">Details</a>
-			</div>
-			</div>
-
-			<div class="card p-3 mt-2 mx-auto top shadow-lg" style="width:250px">
-			<img class="card-img-top shadow-lg" src="{{asset('img/manjushri.jpg')}}" alt="Card image">
-			<div class="card-body">
-				<h5 class="card-title"><strong>Manjushri</strong></h5>
-				<p class="card-text">Unknown</p>
-				<p class="card-text">Rs.1000000</p>
-				<a href="#" class="btn btn-primary">Details</a>
-			</div>
-			</div>
-
-			<div class="card p-3 mt-2 mx-auto top shadow-lg" style="width:250px">
-			<img class="card-img-top shadow-lg" src="{{asset('img/maha-kala.jpg')}}" alt="Card image">
-			<div class="card-body">
-				<h5 class="card-title"><strong>Maha Kala</strong></h5>
-				<p class="card-text">Samundra Maan Shrestha</p>
-				 <p class="card-text">Rs.1000000</p>
-				<a href="#" class="btn btn-primary">Details</a>
-			</div>
-			</div>
-
-			<div class="card p-3 mt-2 mx-auto top shadow-lg" style="width:250px">
-			<img class="card-img-top shadow-lg" src="{{asset('img/vishnu.jpg')}}" alt="Card image">
-			<div class="card-body">
-				<h5 class="card-title"><strong>Vishnu</strong></h5>
-				<p class="card-text">Unknown</p>
-				 <p class="card-text">Rs.1000000</p>
-				<a href="#" class="btn btn-primary">Details</a>
-			</div>
-			</div>
-
+		<div class="row">
+		<h4 class="text-info mx-auto">New Arrival</h4>
 		</div>
- </div>
+
+		<div class="d-flex flex-wrap">
+			@foreach($products as $product)
+				<div class="card p-3 mt-2 mx-auto top shadow-lg" style="width:250px">
+				<img class="card-img-top shadow-lg" src='{{asset("$product->image")}}' alt="Card image">
+				<div class="card-body">
+					<h5 class="card-title"><strong>{{$product->name}}</strong></h5>
+					<p class="card-text">{{$product->artist}}</p>
+					<a href= '{{asset("/product/$product->id")}}' class="btn btn-primary">Details</a>
+				</div>
+				</div>
+			@endforeach
+		</div>
 </div>
 <!--END OF NEW ARRIVALS-->	
 
 
 @endsection
+
+
+<!--
+
+				<div class="card p-3 mt-2 mx-auto top shadow-lg" style="width:250px">
+				<img class="card-img-top shadow-lg" src="{{asset('img/manjushri.jpg')}}" alt="Card image">
+				<div class="card-body">
+					<h5 class="card-title"><strong>Manjushri</strong></h5>
+					<p class="card-text">Unknown</p>
+					<a href="#" class="btn btn-primary">Details</a>
+				</div>
+				</div>
+
+				<div class="card p-3 mt-2 mx-auto top shadow-lg" style="width:250px">
+				<img class="card-img-top shadow-lg" src="{{asset('img/maha-kala.jpg')}}" alt="Card image">
+				<div class="card-body">
+					<h5 class="card-title"><strong>Maha Kala</strong></h5>
+					<p class="card-text">Samundra Maan Shrestha</p>
+					<a href="#" class="btn btn-primary">Details</a>
+				</div>
+				</div>
+
+				<div class="card p-3 mt-2 mx-auto top shadow-lg" style="width:250px">
+				<img class="card-img-top shadow-lg" src="{{asset('img/vishnu.jpg')}}" alt="Card image">
+				<div class="card-body">
+					<h5 class="card-title"><strong>Vishnu</strong></h5>
+					<p class="card-text">Unknown</p>
+					<a href="#" class="btn btn-primary">Details</a>
+				</div>
+				</div>
+-->

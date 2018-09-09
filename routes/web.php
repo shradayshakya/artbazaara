@@ -14,8 +14,10 @@
 Route::get('/home','IndexController@view');
 Route::get('/','IndexController@view');
 
-Route::get('/aboutus','AboutusController@view');
-Route::get('/result','ResultController@view');
+Route::post('/result','ResultController@view');
+Route::get('/category/{id}','CategoryController@view');
+
+
 Route::get('/product/{product}', 'ProductController@view');
 
 Route::get('/login', 'SessionsController@view');
