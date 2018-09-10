@@ -14,15 +14,15 @@
 <!-- The slideshow -->
 
 <div class="carousel-inner">
-	<div class="carousel-item active">
-		<img src="{{asset('img/banner-nepal-3.jpg')}}" alt="nepal art" width="1350" height="450">
-	</div>	
-	<div class="carousel-item">
-		<img src="{{asset('img/nepal-Banner.jpg')}}" alt="traditional" width="1350" height="450">
+	@foreach($carousel as $image)
+	<div class="carousel-item 
+		@if($image->id == 1)
+		active
+		@endif
+	">
+		<img src="{{$image->image}}" alt="nepal art" width="1350" height="450">
 	</div>
-	<div class="carousel-item">
-		<img src="{{asset('img/arts-banner.jpg')}}" alt="nepal" width="1350" height="450">
-	</div>
+	@endforeach
 </div>
 
 <!-- Left and right controls -->

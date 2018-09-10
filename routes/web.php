@@ -56,3 +56,5 @@ Route::get('/adminpanel/showdeliver/decline/{id}','DeliveryController@decline');
 Route::get('/adminpanel/showsales','AdminpanelController@viewShowSales');
 Route::get('/adminpanel/showpurchase', 'AdminpanelController@viewShowPurchase');
 Route::get('/adminpanel/showusers', 'AdminpanelController@viewShowUsers');
+Route::get('/adminpanel/showcarousel', 'AdminpanelController@viewCarousel');
+Route::post('/adminpanel/showcarousel/{id}', 'CarouselController@update');

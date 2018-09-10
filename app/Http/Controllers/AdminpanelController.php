@@ -147,4 +147,10 @@ class AdminpanelController extends Controller
         $categories = Category::get(); 
         return view('adminpanel.showcategory',compact('categories'));
     }
+
+    public function viewCarousel(){
+        $carousel = DB::table('carousel')->get();
+        //dd($carousel);
+        return view('adminpanel.showcarousel',compact('carousel'));
+    }
 }

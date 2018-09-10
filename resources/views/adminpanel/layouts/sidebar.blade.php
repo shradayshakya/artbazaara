@@ -64,6 +64,13 @@
                 Add Category
             </a>
             </li>
+
+            <li class="nav-item">
+            <a class="nav-link" id='showcarousel' href="/adminpanel/showcarousel">
+                <span data-feather="image"></span>
+                Carousel
+            </a>
+            </li>
         </ul>
       </div>
     </nav>
