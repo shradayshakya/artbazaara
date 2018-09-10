@@ -30,7 +30,13 @@
             </a>
             </li>
 
-
+             <li class="nav-item">
+            <a class="nav-link" id='showusers' href="/adminpanel/showusers">
+                <span data-feather="users"></span>
+                Users
+            </a>    
+            </li>
+            
             <li class="nav-item">
             <a class="nav-link" id='showorder' href="/adminpanel/showorder">
                 <span data-feather="phone"></span>

@@ -11,7 +11,7 @@ class IndexController extends Controller
 {
     public function view(){
         $categories = Category::get();
-        $products = DB::table('products')->orderBy('created_at','desc')->limit(4)->get();
+        $products = DB::table('products')->where('sold',0)->orderBy('created_at','desc')->limit(4)->get();
         //dd($products);
         return view('index',[
             'categories' => $categories,

@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->text("name");
             $table->text("artist");
             $table->text("image");
+            $table->boolean("sold")->default(FALSE);
             $table->integer("category_id");
             $table->timestamps();
         });

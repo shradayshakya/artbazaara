@@ -15,6 +15,10 @@ class DeliveryController extends Controller
         $sales->product_id = $delivery->product_id;
         $sales->save();
         DB::table('deliveries')->where('id',$id)->delete();
+
+
+        DB::table('products')->where('id', $delivery->product_id)->update(['sold'=>1]);
+
         return redirect('adminpanel/showsales');
     }
 

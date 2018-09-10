@@ -12,12 +12,14 @@ class ProductController extends Controller
     public function view($productid){
         $products = DB::select('
         select 
-            products.id,products.name, products.artist, 
+            products.id,products.name, products.artist,
+            products.sold, 
             products.artist, products.image,products.category, 
             products.category,purchases.price
         from
             (select 
                 products.id, products.name,
+                products.sold,
                 products.artist, products.image,
                 categories.name as category
             from 

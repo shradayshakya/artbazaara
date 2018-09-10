@@ -32,7 +32,8 @@ class AdminpanelController extends Controller
                 from 
                     products
                 inner join categories
-                on products.category_id = categories.id) as products 
+                on products.category_id = categories.id
+                where products.sold=false) as products 
             inner join purchases 
             on products.id = purchases.product_id;
             ');
@@ -121,6 +122,21 @@ class AdminpanelController extends Controller
         on sales.user_id = users.id;
         ');
         return view('adminpanel.showsales',compact('sales'));
+    }
+
+
+    public function viewShowUsers(){
+        $users = DB::select('
+            SELECT sales.delivered_orders, users.name, users.email, users.phone
+            FROM
+                (SELECT count(sales.id) as delivered_orders, sales.user_id 
+                FROM sales 
+                group by sales.user_id 
+                order by count(sales.id) DESC) AS sales
+            INNER JOIN users
+            ON sales.user_id = users.id
+        ');
+        return view('adminpanel.showuser',compact('users'));
     }
 
     public function viewAddCategory(){

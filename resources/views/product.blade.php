@@ -27,6 +27,7 @@
 						<h4>Rs.{{$product->price}}</h4>
 
 					</br>	
+					@if(!$product->sold)
 						@php($id = $product->id)
 
 						@if(Auth::check())
@@ -34,6 +35,9 @@
 						@else
 						<a href='{{asset("/login/$id")}}' class="text-white btn btn-primary">Login</a>	
 						@endif
+					@else
+					<h3 class='text-danger'>SOLD</h3>
+					@endif
 				</div>
 			</div>
 		</div>
