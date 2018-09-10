@@ -149,7 +149,7 @@ class AdminpanelController extends Controller
     }
 
     public function viewCarousel(){
-        $carousel = DB::table('carousel')->get();
+        $carousel = DB::table('carousels')->get();
         //dd($carousel);
         return view('adminpanel.showcarousel',compact('carousel'));
     }

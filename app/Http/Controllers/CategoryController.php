@@ -18,7 +18,7 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->desc = $request->desc;
         $category->save();
-        return redirect('/adminpanel');
+        return redirect('/adminpanel/addcategory');
     }  
 
     public function view($id){

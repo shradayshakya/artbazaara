@@ -63,7 +63,7 @@ class ProductController extends Controller
         $purchase = new PurchaseController; 
         $purchase->register($request, $product->id);
     
-        return redirect('/adminpanel');
+        return redirect('/adminpanel/addproduct');
     }
 }
 

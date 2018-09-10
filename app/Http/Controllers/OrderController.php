@@ -31,7 +31,7 @@ class OrderController extends Controller
         $delivery->product_id = $order->product_id;
         $delivery->save();
         DB::table('orders')->where('id',$id)->delete();
-        return redirect('adminpanel/showdeliver');
+        return redirect('adminpanel/showorder');
     }
 
     public function decline($id){

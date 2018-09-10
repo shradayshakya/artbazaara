@@ -21,14 +21,14 @@ class CarouselController extends Controller
         $img_name = '/img/'.$name;
         
 
-        $test = DB::table('carousel')->where('id',$id)->count();
+        $test = DB::table('carousels')->where('id',$id)->count();
         if(!$test){
-            DB::table('carousel')->insert([
+            DB::table('carousels')->insert([
                 'id' => $id,
                 'image' => $img_name
                 ]);
         }else{
-            DB::table('carousel')
+            DB::table('carousels')
             ->where('id', $id)
             ->update(['image' => $img_name]);
         }

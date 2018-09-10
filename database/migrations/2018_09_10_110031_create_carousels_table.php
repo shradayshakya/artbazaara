@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCarouselTable extends Migration
+class CreateCarouselsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCarouselTable extends Migration
      */
     public function up()
     {
-        Schema::create('carousel', function (Blueprint $table) {
+        Schema::create('carousels', function (Blueprint $table) {
             $table->integer('id');
             $table->text("image");
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateCarouselTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('carousels');
     }
 }

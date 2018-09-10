@@ -19,7 +19,7 @@ class DeliveryController extends Controller
 
         DB::table('products')->where('id', $delivery->product_id)->update(['sold'=>1]);
 
-        return redirect('adminpanel/showsales');
+        return redirect('adminpanel/showdeliver');
     }
 
     public function decline($id){
