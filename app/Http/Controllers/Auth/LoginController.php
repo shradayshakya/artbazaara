@@ -36,4 +36,9 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function showLoginForm(){
+        $categories =\App\Category::get();
+        return view('login',compact('categories')); 
+    }
 }

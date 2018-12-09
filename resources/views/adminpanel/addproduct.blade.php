@@ -40,7 +40,7 @@
 					</div>
 					<div class="col-md-6 mt-4">
 						<label for="phone">Contact number</label>
-						<input type="text" class="form-control" name = 'phone' placeholder="Price" required>
+						<input type="text" class="form-control" name = 'phone' placeholder="Contact number" required>
 					</div>
 				</div>
 

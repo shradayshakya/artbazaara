@@ -6,9 +6,17 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use App\Delivery;
+use App\Order;
 
 class AdminpanelController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth:admin');
+    }
+    //, ['except' => ['login']]
+
     public function view(){
         return view('adminpanel.adminmain');
     }
@@ -153,4 +161,66 @@ class AdminpanelController extends Controller
         //dd($carousel);
         return view('adminpanel.showcarousel',compact('carousel'));
     }
+
+    
+    public function productRegister(Request $request){
+        $this->validate(request(),[
+            'name'=>'required',
+            'artist'=>'required',
+            'category' => 'required',
+            'supplier' => 'required',
+            'phone' => 'required',
+            'cost' => 'required',
+            'price' => 'required',
+            'input_img' => 'required|image|mimes:jpg,jpeg,png,gif'
+        ]);
+
+        $product = new Product;
+        $product->name = $request->input('name');
+        $product->artist = $request->input('artist');
+        $product->category_id = $request->input('category');
+
+        if ($request->hasFile('input_img')) {
+            $image = $request->file('input_img');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/img/');
+            $image->move($destinationPath, $name);
+        }
+        $product->image = '/img/'.$name;
+
+        $product->save();
+        $purchase = new PurchaseController; 
+        $purchase->register($request, $product->id);
+    
+        return redirect('/adminpanel/addproduct');
+    }
+
+
+    public function categoryRegister(Request $request){
+        $this->validate(request(),[
+            'name'=>'required',
+            'desc'=>'required',
+        ]);
+        $category = new Category;
+        $category->name = $request->name;
+        $category->desc = $request->desc;
+        $category->save();
+        return redirect('/adminpanel/addcategory');
+    }  
+
+    public function orderConfirm($id){
+        $order = DB::table('orders')->where('id',$id)->first();
+        $delivery = new Delivery;
+        $delivery->user_id = $order->user_id;
+        $delivery->product_id = $order->product_id;
+        $delivery->save();
+        DB::table('orders')->where('id',$id)->delete();
+        return redirect('adminpanel/showorder');
+    }
+
+    public function orderDecline($id){
+        DB::table('orders')->where('id',$id)->delete();
+        return redirect('adminpanel/showorder');
+    }
+
 }

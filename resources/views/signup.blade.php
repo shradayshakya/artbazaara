@@ -3,7 +3,7 @@
 @section('content')
 		<!-- form -->
 		<div class="card mt-4 mx-auto w-75">
-			<h5 class="card-header bg-primary text-white text-center">SIGN UP</h2>
+			<h5 class="card-header bg-primary text-white text-center">SIGN UP</h5>
 			<form class="card-body" id = 'registrationForm' action ="/signup" method="POST"> 
 			{{csrf_field()}}
 				<div class="row">
@@ -42,7 +42,7 @@
 					</div>
 				</div>
 
-				<div class="d-flex justify-content-center mt-4">
+				<div class="	mt-4">
 						<button type="submit" class="btn btn-primary mt-2">Sign up</button>
 				</div>
 			</form>

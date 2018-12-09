@@ -12,8 +12,8 @@ class ResultController extends Controller
         $data = $request->input('data');
         $data = "%".$data."%";
         $categories = Category::get();
-        $productsByName = DB::table('products')->where('name','like',$data)->get();
-        $productsByArtist = DB::table('products')->where('artist','like',$data)->get();
+        $productsByName = DB::table('products')->where('name','like',$data)->where('sold',0)->get();
+        $productsByArtist = DB::table('products')->where('artist','like',$data)->where('sold',0)->get();
         
         return view('result',[
             'categories' => $categories,

@@ -46,7 +46,7 @@
 		<div class="d-flex flex-wrap">
 			@foreach($products as $product)
 				<div class="card p-3 mt-2 mx-auto top shadow-lg" style="width:250px">
-				<img class="card-img-top shadow-lg" src='{{asset("$product->image")}}' alt="Card image">
+				<img class="card-img-top shadow-lg" style= 'width:200px; height:200px;' src='{{asset("$product->image")}}' alt="Card image">
 				<div class="card-body">
 					<h5 class="card-title"><strong>{{$product->name}}</strong></h5>
 					<p class="card-text">{{$product->artist}}</p>

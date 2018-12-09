@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::get('/home','IndexController@view');
 Route::get('/','IndexController@view');
 
@@ -35,26 +37,34 @@ Route::get('/order/{id}', 'OrderController@placeorder');
 
 //admin panel routes
 
-Route::get('/adminpanel', 'AdminpanelController@view');
+Route::prefix('/adminpanel')->group(function(){
 
-Route::get('/adminpanel/addproduct','AdminpanelController@viewAddProduct');
-Route::get('/adminpanel/showproduct', 'AdminpanelController@viewShowProduct');
-Route::post('/adminpanel/addproduct', 'ProductController@register');
+    Route::get('/login','Auth\AdminLoginController@showLoginForm');
+    Route::post('/login','Auth\AdminLoginController@login');
+    Route::get('/logout','Auth\LoginController@logout');
 
-Route::get('/adminpanel/addcategory', 'AdminpanelController@viewAddCategory');
-Route::get('/adminpanel/showcategory','AdminpanelController@viewShowCategory');
-Route::post('/adminpanel/addcategory','CategoryController@register');
-
-Route::get('/adminpanel/showorder','AdminpanelController@viewShowOrder');
-Route::get('/adminpanel/showorder/confirm/{id}','OrderController@confirm');
-Route::get('/adminpanel/showorder/decline/{id}','OrderController@decline');
-
-Route::get('/adminpanel/showdeliver','AdminpanelController@viewShowDeliver');
-Route::get('/adminpanel/showdeliver/confirm/{id}','DeliveryController@confirm');
-Route::get('/adminpanel/showdeliver/decline/{id}','DeliveryController@decline');
-
-Route::get('/adminpanel/showsales','AdminpanelController@viewShowSales');
-Route::get('/adminpanel/showpurchase', 'AdminpanelController@viewShowPurchase');
-Route::get('/adminpanel/showusers', 'AdminpanelController@viewShowUsers');
-Route::get('/adminpanel/showcarousel', 'AdminpanelController@viewCarousel');
-Route::post('/adminpanel/showcarousel/{id}', 'CarouselController@update');
+    Route::get('/', 'AdminpanelController@view');
+    
+    Route::get('/addproduct','AdminpanelController@viewAddProduct');
+    Route::get('/showproduct', 'AdminpanelController@viewShowProduct');
+    Route::post('/addproduct', 'AdminpanelController@productRegister');
+    
+    Route::get('/addcategory', 'AdminpanelController@viewAddCategory');
+    Route::get('/showcategory','AdminpanelController@viewShowCategory');
+    Route::post('/addcategory','AdminpanelController@categoryRegister');
+    
+    Route::get('/showorder','AdminpanelController@viewShowOrder');
+    Route::get('/showorder/confirm/{id}','AdminpanelController@orderConfirm');
+    Route::get('/showorder/decline/{id}','AdminpanelController@orderDecline');
+    
+    Route::get('/showdeliver','AdminpanelController@viewShowDeliver');
+    Route::get('/showdeliver/confirm/{id}','DeliveryController@confirm');
+    Route::get('/showdeliver/decline/{id}','DeliveryController@decline');
+    
+    Route::get('/showsales','AdminpanelController@viewShowSales');
+    Route::get('/showpurchase', 'AdminpanelController@viewShowPurchase');
+    Route::get('/showusers', 'AdminpanelController@viewShowUsers');
+    Route::get('/showcarousel', 'AdminpanelController@viewCarousel');
+    Route::post('/showcarousel/{id}', 'CarouselController@update');
+});
+Auth::routes();

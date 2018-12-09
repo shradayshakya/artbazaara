@@ -8,19 +8,6 @@ use App\Category;
 
 class CategoryController extends Controller
 {
-    
-    public function register(Request $request){
-        $this->validate(request(),[
-            'name'=>'required',
-            'desc'=>'required',
-        ]);
-        $category = new Category;
-        $category->name = $request->name;
-        $category->desc = $request->desc;
-        $category->save();
-        return redirect('/adminpanel/addcategory');
-    }  
-
     public function view($id){
         $categories = Category::get();
         $products = DB::table('products')->where('category_id','=',$id)->where('sold',0)->get();
